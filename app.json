@@ -1,0 +1,53 @@
+{
+  "expo": {
+    "name": "timesphere",
+    "slug": "timesphere",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icons/timesphere.png",
+    "scheme": "timesphere",
+    "userInterfaceStyle": "automatic",
+    "ios": {
+      "icon": "./assets/icons/timesphere.png"
+    },
+    "android": {
+      "icon" : "./assets/icons/timesphere.png",
+      "predictiveBackGestureEnabled": false,
+      "package": "com.anonymous.timesphere"
+    },
+    "web": {
+      "output": "static",
+      "favicon": "./assets/icons/timesphere.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#208AEF",
+          "android": {
+            "image": "./assets/icons/timesphere.png",
+            "imageWidth": 76
+          }
+        }
+      ],
+      [
+        "expo-font",
+        {
+          "fonts": [
+            "./assets/fonts/PlusJakartaSans-Regular.ttf",
+            "./assets/fonts/PlusJakartaSans-Bold.ttf",
+            "./assets/fonts/PlusJakartaSans-Medium.ttf",
+            "./assets/fonts/PlusJakartaSans-SemiBold.ttf",
+            "./assets/fonts/PlusJakartaSans-ExtraBold.ttf",
+            "./assets/fonts/PlusJakartaSans-Light.ttf"
+          ]
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    }
+  }
+}
