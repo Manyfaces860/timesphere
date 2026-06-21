@@ -241,7 +241,7 @@ export default function TasksScreen() {
 
                 <Pressable
                     onPress={() => router.push("/create_task")}
-                    className="h-12 w-[20%] items-center justify-center rounded-full bg-white"
+                    className="h-12 w-[22%] items-center justify-center rounded-full bg-white"
                 >
                     <Text className="font-sans-semibold leading-none text-zinc-950">
                         New Task

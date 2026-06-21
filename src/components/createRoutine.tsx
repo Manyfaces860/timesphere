@@ -1,6 +1,6 @@
 // components/CreateRoutine.tsx
 
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState, useRef } from "react";
 import TimePicker, {formatMinutes} from "@/components/TimePicker";
 import {
     Alert,
@@ -36,6 +36,16 @@ const WEEK_DAYS: {
     { label: "S", value: "sun" },
 ];
 
+const DEFAULT_ROUTINE_NAME = "My Routine";
+
+const DEFAULT_SELECTED_DAYS: WeekDay[] = [
+    "mon",
+    "tue",
+    "wed",
+    "thu",
+    "fri",
+];
+
 function createId(prefix: string) {
     return `${prefix}_${Date.now()}_${Math.random()
         .toString(36)
@@ -63,20 +73,16 @@ export default function CreateRoutine({
     const defaultContextId = contexts[0]?.id;
 
     const [routineName, setRoutineName] =
-        useState("My Routine");
+        useState(DEFAULT_ROUTINE_NAME);
 
     const [selectedDays, setSelectedDays] =
-        useState<WeekDay[]>([
-            "mon",
-            "tue",
-            "wed",
-            "thu",
-            "fri",
-        ]);
+        useState<WeekDay[]>(DEFAULT_SELECTED_DAYS);
 
     const [blocks, setBlocks] = useState<RoutineBlock[]>([
         createEmptyBlock(defaultContextId, 0),
     ]);
+
+    const scrollViewRef = useRef<ScrollView>(null);
 
     const sortedBlocks = useMemo(
         () =>
@@ -230,6 +236,23 @@ export default function CreateRoutine({
         return true;
     }
 
+    function resetRoutineForm() {
+        setRoutineName(DEFAULT_ROUTINE_NAME);
+
+        // Create a new array instead of reusing the same reference.
+        setSelectedDays([...DEFAULT_SELECTED_DAYS]);
+
+        setBlocks([
+            createEmptyBlock(defaultContextId, 0),
+        ]);
+
+        scrollViewRef.current?.scrollTo({
+            x: 0,
+            y: 0,
+            animated: true,
+        });
+    }
+
     function handleSave() {
         if (!validateRoutine()) return;
 
@@ -250,11 +273,13 @@ export default function CreateRoutine({
         };
 
         onSave(routine);
+        resetRoutineForm();
     }
 
     return (
         <ScrollView
             className="flex-1"
+            ref={scrollViewRef}
             keyboardShouldPersistTaps="handled"
         >
             <View className="px-5 pb-30 pt-16">
@@ -274,11 +299,15 @@ export default function CreateRoutine({
                     </Text>
 
                     <TextInput
+                        style={{
+                            paddingHorizontal: 16,
+                            paddingVertical: 14,
+                        }}
                         value={routineName}
                         onChangeText={setRoutineName}
                         placeholder="Weekday routine"
                         placeholderTextColor="#71717A"
-                        className="rounded-2xl border border-zinc-800 bg-zinc-900 px-20 py-4 text-base text-white"
+                        className="rounded-2xl border-zinc-800 bg-zinc-900 text-base text-white"
                     />
                 </View>
 
@@ -359,6 +388,10 @@ export default function CreateRoutine({
                             </Text>
 
                             <TextInput
+                                style={{
+                                    paddingHorizontal: 16,
+                                    paddingVertical: 14,
+                                }}
                                 value={block.name ?? ""}
                                 onChangeText={(value) =>
                                     updateBlock(
@@ -369,7 +402,7 @@ export default function CreateRoutine({
                                 }
                                 placeholder="Morning at home"
                                 placeholderTextColor="#71717A"
-                                className="mb-5 rounded-2xl border border-zinc-800 bg-zinc-900 px-4 py-4 text-white"
+                                className="mb-5 rounded-2xl border-zinc-800 bg-zinc-900 text-white"
                             />
 
                             <Text className="mb-3 text-sm font-medium text-zinc-300">

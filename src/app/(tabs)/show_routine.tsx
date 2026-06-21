@@ -288,10 +288,10 @@ export default function ShowRoutineScreen() {
 
                 <Pressable
                     onPress={() => router.push("/add_routine")}
-                    className="h-12 w-12 items-center justify-center rounded-full bg-white"
+                    className="h-12 w-[23%] items-center justify-center rounded-full bg-white"
                 >
-                    <Text className="text-2xl font-medium text-zinc-950">
-                        +
+                    <Text className="font-sans-semibold font-medium text-zinc-950">
+                        New Routine
                     </Text>
                 </Pressable>
             </View>

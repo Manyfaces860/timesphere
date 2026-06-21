@@ -283,7 +283,7 @@ export default function HomeScreen() {
                     onPress={() =>
                         router.push("/create_task")
                     }
-                    className="items-center h-12 justify-center rounded-full bg-white px-5"
+                    className="items-center h-12 w-[22%] justify-center rounded-full bg-white px-5"
                 >
                     <Text className="font-sans-semibold text-zinc-950">
                         New Task

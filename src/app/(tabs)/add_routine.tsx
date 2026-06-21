@@ -29,7 +29,7 @@ export default function CreateRoutineScreen() {
                         },
                     },
                     {
-                        text: "take my to tasks",
+                        text: "take me to my tasks",
                         onPress: () => {
                             router.replace("/");
                         },

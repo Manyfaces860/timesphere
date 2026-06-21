@@ -257,11 +257,15 @@ export default function CreateTask({
                 </Text>
 
                 <TextInput
+                    style={{
+                        paddingHorizontal: 16,
+                        paddingVertical: 14,
+                    }}
                     value={title}
                     onChangeText={setTitle}
                     placeholder="Reply to recruiter"
                     placeholderTextColor="#71717A"
-                    className="rounded-2xl border border-zinc-800 bg-zinc-900 px-4 py-4 text-base text-white"
+                    className="rounded-2xl border-zinc-800 bg-zinc-900 text-base text-white"
                 />
             </View>
 
@@ -273,12 +277,16 @@ export default function CreateTask({
 
                 <TextInput
                     value={notes}
+                    style={{
+                        paddingHorizontal: 16,
+                        paddingVertical: 14,
+                    }}
                     onChangeText={setNotes}
                     placeholder="Add any useful details..."
                     placeholderTextColor="#71717A"
                     multiline
                     textAlignVertical="top"
-                    className="min-h-28 rounded-2xl border border-zinc-800 bg-zinc-900 px-4 py-4 text-base text-white"
+                    className="min-h-28 rounded-2xl border-zinc-800 bg-zinc-900 text-base text-white"
                 />
             </View>
 
