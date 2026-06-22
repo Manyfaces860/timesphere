@@ -241,18 +241,18 @@ export default function CreateTask({
             showsVerticalScrollIndicator={false}
             contentContainerClassName="px-5 pb-32 pt-16"
         >
-            <Text className="text-4xl font-bold tracking-tight text-white">
+            <Text className="text-4xl font-sans-bold tracking-tight text-white">
                 Create a task
             </Text>
 
-            <Text className="mt-3 text-base leading-6 text-zinc-400">
+            <Text className="mt-3 text-base font-sans leading-6 text-zinc-400">
                 Tell TimeSphere what needs to be done and the
                 context where it belongs.
             </Text>
 
             {/* Task title */}
             <View className="mt-8">
-                <Text className="mb-2 text-sm font-semibold text-zinc-300">
+                <Text className="mb-2 text-sm font-sans-semibold text-zinc-300">
                     What do you need to do?
                 </Text>
 
@@ -265,13 +265,13 @@ export default function CreateTask({
                     onChangeText={setTitle}
                     placeholder="Reply to recruiter"
                     placeholderTextColor="#71717A"
-                    className="rounded-2xl border-zinc-800 bg-zinc-900 text-base text-white"
+                    className="rounded-2xl border-zinc-800 bg-zinc-900 text-base font-sans text-white"
                 />
             </View>
 
             {/* Notes */}
             <View className="mt-6">
-                <Text className="mb-2 text-sm font-semibold text-zinc-300">
+                <Text className="mb-2 text-sm font-sans-semibold text-zinc-300">
                     Notes
                 </Text>
 
@@ -286,17 +286,17 @@ export default function CreateTask({
                     placeholderTextColor="#71717A"
                     multiline
                     textAlignVertical="top"
-                    className="min-h-28 rounded-2xl border-zinc-800 bg-zinc-900 text-base text-white"
+                    className="min-h-28 rounded-2xl border-zinc-800 bg-zinc-900 text-base font-sans text-white"
                 />
             </View>
 
             {/* Context selection */}
             <View className="mt-8">
-                <Text className="text-lg font-bold text-white">
+                <Text className="text-lg font-sans-bold text-white">
                     Where can you do this?
                 </Text>
 
-                <Text className="mt-1 text-sm leading-5 text-zinc-500">
+                <Text className="mt-1 text-sm font-sans leading-5 text-zinc-500">
                     Select one or more contexts. Choose Anywhere if
                     the task has no location restriction.
                 </Text>
@@ -311,7 +311,7 @@ export default function CreateTask({
                         }`}
                     >
                         <Text
-                            className={`font-semibold ${
+                            className={`font-sans-semibold ${
                                 isAnywhereTask
                                     ? "text-zinc-950"
                                     : "text-zinc-400"
@@ -339,7 +339,7 @@ export default function CreateTask({
                                 }`}
                             >
                                 <Text
-                                    className={`font-semibold ${
+                                    className={`font-sans-semibold ${
                                         selected
                                             ? "text-zinc-950"
                                             : "text-zinc-400"
@@ -355,11 +355,11 @@ export default function CreateTask({
 
             {/* Energy */}
             <View className="mt-8">
-                <Text className="text-lg font-bold text-white">
+                <Text className="text-lg font-sans-bold text-white">
                     Energy needed
                 </Text>
 
-                <Text className="mt-1 text-sm leading-5 text-zinc-500">
+                <Text className="mt-1 text-sm font-sans leading-5 text-zinc-500">
                     This helps TimeSphere avoid suggesting demanding
                     tasks when your energy is low.
                 </Text>
@@ -384,7 +384,7 @@ export default function CreateTask({
                                 <View className="flex-row items-center justify-between">
                                     <View className="flex-1 pr-4">
                                         <Text
-                                            className={`text-base font-bold ${
+                                            className={`text-base font-sans-bold ${
                                                 selected
                                                     ? "text-zinc-950"
                                                     : "text-white"
@@ -394,7 +394,7 @@ export default function CreateTask({
                                         </Text>
 
                                         <Text
-                                            className={`mt-1 text-sm ${
+                                            className={`mt-1 text-sm font-sans ${
                                                 selected
                                                     ? "text-zinc-600"
                                                     : "text-zinc-500"
@@ -424,7 +424,7 @@ export default function CreateTask({
 
             {/* Priority */}
             <View className="mt-8">
-                <Text className="text-lg font-bold text-white">
+                <Text className="text-lg font-sans-bold text-white">
                     Priority
                 </Text>
 
@@ -446,7 +446,7 @@ export default function CreateTask({
                                 }`}
                             >
                                 <Text
-                                    className={`font-bold ${
+                                    className={`font-sans-bold ${
                                         selected
                                             ? "text-zinc-950"
                                             : "text-zinc-400"
@@ -467,11 +467,11 @@ export default function CreateTask({
                     className="flex-row items-center justify-between"
                 >
                     <View className="flex-1 pr-5">
-                        <Text className="text-lg font-bold text-white">
+                        <Text className="text-lg font-sans-bold text-white">
                             Preparation task
                         </Text>
 
-                        <Text className="mt-1 text-sm leading-5 text-zinc-500">
+                        <Text className="mt-1 text-sm font-sans leading-5 text-zinc-500">
                             Show this task before an upcoming context,
                             such as packing your charger before Work.
                         </Text>
@@ -496,13 +496,13 @@ export default function CreateTask({
 
                 {isPreparationTask && (
                     <View className="mt-6">
-                        <Text className="mb-3 text-sm font-semibold text-zinc-300">
+                        <Text className="mb-3 text-sm font-sans-semibold text-zinc-300">
                             Prepare for
                         </Text>
 
                         {contexts.length === 0 ? (
                             <View className="rounded-2xl border border-amber-500/30 bg-amber-500/10 p-4">
-                                <Text className="text-sm leading-5 text-amber-300">
+                                <Text className="text-sm font-sans leading-5 text-amber-300">
                                     Create at least one context before adding
                                     a preparation task.
                                 </Text>
@@ -528,7 +528,7 @@ export default function CreateTask({
                                             }`}
                                         >
                                             <Text
-                                                className={`font-semibold ${
+                                                className={`font-sans-semibold ${
                                                     selected
                                                         ? "text-zinc-950"
                                                         : "text-zinc-400"
@@ -542,7 +542,7 @@ export default function CreateTask({
                             </View>
                         )}
 
-                        <Text className="mb-3 mt-6 text-sm font-semibold text-zinc-300">
+                        <Text className="mb-3 mt-6 text-sm font-sans-semibold text-zinc-300">
                             Show this task before
                         </Text>
 
@@ -568,7 +568,7 @@ export default function CreateTask({
                                             }`}
                                         >
                                             <Text
-                                                className={`font-semibold ${
+                                                className={`font-sans-semibold ${
                                                     selected
                                                         ? "text-zinc-950"
                                                         : "text-zinc-400"
@@ -590,7 +590,7 @@ export default function CreateTask({
                 onPress={handleSave}
                 className="mt-8 items-center rounded-2xl bg-white py-5"
             >
-                <Text className="text-base font-bold text-zinc-950">
+                <Text className="text-base font-sans-bold text-zinc-950">
                     Save task
                 </Text>
             </Pressable>

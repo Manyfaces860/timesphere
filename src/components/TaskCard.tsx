@@ -69,7 +69,7 @@ function PriorityBadge({
             className={`rounded-full px-3 py-2 ${selectedStyle.container}`}
         >
             <Text
-                className={`text-xs font-bold capitalize ${selectedStyle.text}`}
+                className={`text-xs font-sans-bold capitalize ${selectedStyle.text}`}
             >
                 {priority}
             </Text>
@@ -129,7 +129,7 @@ export function TaskCard({
                     }`}
                 >
                     {task.completed && (
-                        <Text className="text-sm font-bold text-zinc-950">
+                        <Text className="text-sm font-sans-bold text-zinc-950">
                             ✓
                         </Text>
                     )}
@@ -138,7 +138,7 @@ export function TaskCard({
                 <View className="flex-1">
                     <View className="flex-row items-start justify-between gap-3">
                         <Text
-                            className={`flex-1 text-lg font-bold ${
+                            className={`flex-1 text-lg font-sans-bold ${
                                 task.completed
                                     ? "text-zinc-500 line-through"
                                     : "text-white"
@@ -152,7 +152,7 @@ export function TaskCard({
 
                     {task.notes && (
                         <Text
-                            className={`mt-2 text-sm leading-5 ${
+                            className={`mt-2 text-sm font-sans leading-5 ${
                                 task.completed
                                     ? "text-zinc-600"
                                     : "text-zinc-400"
@@ -168,14 +168,14 @@ export function TaskCard({
                                 key={contextName}
                                 className="rounded-full bg-white/10 px-3 py-2"
                             >
-                                <Text className="text-xs font-semibold text-zinc-300">
+                                <Text className="text-xs font-sans-semibold text-zinc-300">
                                     {contextName}
                                 </Text>
                             </View>
                         ))}
 
                         <View className="rounded-full bg-white/10 px-3 py-2">
-                            <Text className="text-xs font-semibold text-zinc-300">
+                            <Text className="text-xs font-sans-semibold text-zinc-300">
                                 {ENERGY_LABELS[task.energyLevel]}
                             </Text>
                         </View>
@@ -183,11 +183,11 @@ export function TaskCard({
 
                     {preparationContextName && (
                         <View className="mt-4 rounded-2xl border border-blue-500/20 bg-blue-500/10 p-3">
-                            <Text className="text-sm font-semibold text-blue-300">
+                            <Text className="text-sm font-sans-semibold text-blue-300">
                                 Prepare for {preparationContextName}
                             </Text>
 
-                            <Text className="mt-1 text-xs text-blue-400/80">
+                            <Text className="mt-1 text-xs font-sans text-blue-400/80">
                                 {formatPreparationTime(
                                     task.preparationMinutesBefore
                                 )}
@@ -204,7 +204,7 @@ export function TaskCard({
                             }
                             className="rounded-xl bg-white/10 px-4 py-3"
                         >
-                            <Text className="text-sm font-bold text-white">
+                            <Text className="text-sm font-sans-bold text-white">
                                 {task.completed
                                     ? "Mark active"
                                     : "Complete"}
@@ -215,7 +215,7 @@ export function TaskCard({
                             onPress={() => onDelete(task)}
                             className="rounded-xl bg-red-500/10 px-4 py-3"
                         >
-                            <Text className="text-sm font-bold text-red-400">
+                            <Text className="text-sm font-sans-bold text-red-400">
                                 Delete
                             </Text>
                         </Pressable>

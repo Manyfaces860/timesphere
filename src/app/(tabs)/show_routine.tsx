@@ -276,11 +276,11 @@ export default function ShowRoutineScreen() {
         >
             <View className="flex-row items-start justify-between gap-4">
                 <View className="flex-1">
-                    <Text className="text-4xl font-bold tracking-tight text-white">
+                    <Text className="text-4xl font-sans-bold tracking-tight text-white">
                         Your routines
                     </Text>
 
-                    <Text className="mt-3 text-base leading-6 text-zinc-400">
+                    <Text className="mt-3 text-base font-sans leading-6 text-zinc-400">
                         See how your day is divided into different
                         contexts.
                     </Text>
@@ -290,7 +290,7 @@ export default function ShowRoutineScreen() {
                     onPress={() => router.push("/add_routine")}
                     className="h-12 w-[23%] items-center justify-center rounded-full bg-white"
                 >
-                    <Text className="font-sans-semibold font-medium text-zinc-950">
+                    <Text className="font-sans-semibold text-zinc-950">
                         New Routine
                     </Text>
                 </Pressable>
@@ -302,11 +302,11 @@ export default function ShowRoutineScreen() {
                         <Text className="text-3xl">🗓️</Text>
                     </View>
 
-                    <Text className="mt-5 text-xl font-bold text-white">
+                    <Text className="mt-5 text-xl font-sans-bold text-white">
                         No routine yet
                     </Text>
 
-                    <Text className="mt-2 text-center text-base leading-6 text-zinc-400">
+                    <Text className="mt-2 text-center font-sans text-base leading-6 text-zinc-400">
                         Create a routine to help TimeSphere understand
                         how your day usually flows.
                     </Text>
@@ -315,13 +315,13 @@ export default function ShowRoutineScreen() {
                         onPress={() => router.push("/add_routine")}
                         className="mt-6 rounded-2xl bg-white px-6 py-4"
                     >
-                        <Text className="font-bold text-zinc-950">
+                        <Text className="font-sans-bold text-zinc-950">
                             Create routine
                         </Text>
                     </Pressable>
                 </View>
             ) : (
-                <View className="mt-8 gap-5">
+                <View className="mt-8 gap-5 will-change-variable">
                     {routines.map((routine) => (
                         <RoutineCard
                             key={routine.id}

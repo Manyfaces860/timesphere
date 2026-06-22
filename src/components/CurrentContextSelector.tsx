@@ -85,7 +85,7 @@ export default function CurrentContextSelector({
                 </View>
             </View>
 
-            <Text className="mb-3 mt-6 text-sm font-semibold text-zinc-300">
+            <Text className="mb-3 mt-6 text-sm font-sans-semibold text-zinc-300">
                 Where are you?
             </Text>
 
@@ -99,7 +99,7 @@ export default function CurrentContextSelector({
                     }`}
                 >
                     <Text
-                        className={`font-semibold ${
+                        className={`font-sans-semibold ${
                             value.contextId === undefined
                                 ? "text-zinc-950"
                                 : "text-zinc-400"
@@ -126,7 +126,7 @@ export default function CurrentContextSelector({
                             }`}
                         >
                             <Text
-                                className={`font-semibold ${
+                                className={`font-sans-semibold ${
                                     selected
                                         ? "text-zinc-950"
                                         : "text-zinc-400"

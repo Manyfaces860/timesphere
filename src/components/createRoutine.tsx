@@ -283,18 +283,18 @@ export default function CreateRoutine({
             keyboardShouldPersistTaps="handled"
         >
             <View className="px-5 pb-30 pt-16">
-                <Text className="text-4xl font-bold tracking-tight text-white">
+                <Text className="text-4xl font-sans-bold tracking-tight text-white">
                     Let&apos;s map your day
                 </Text>
 
-                <Text className="mt-3 text-base leading-6 text-zinc-400">
+                <Text className="mt-3 text-base font-sans leading-6 text-zinc-400">
                     Add the places or modes you usually move
                     through. TimeSphere will use them to show
                     relevant tasks throughout your day.
                 </Text>
 
                 <View className="mt-8">
-                    <Text className="mb-2 text-sm font-semibold text-zinc-300">
+                    <Text className="mb-2 text-sm font-sans-semibold text-zinc-300">
                         Routine name
                     </Text>
 
@@ -307,12 +307,12 @@ export default function CreateRoutine({
                         onChangeText={setRoutineName}
                         placeholder="Weekday routine"
                         placeholderTextColor="#71717A"
-                        className="rounded-2xl border-zinc-800 bg-zinc-900 text-base text-white"
+                        className="rounded-2xl border-zinc-800 bg-zinc-900 text-base font-sans text-white"
                     />
                 </View>
 
                 <View className="mt-7">
-                    <Text className="mb-3 text-sm font-semibold text-zinc-300">
+                    <Text className="mb-3 text-sm font-sans-semibold text-zinc-300">
                         Applies on
                     </Text>
 
@@ -334,7 +334,7 @@ export default function CreateRoutine({
                                     }`}
                                 >
                                     <Text
-                                        className={`font-bold ${
+                                        className={`font-sans-bold ${
                                             selected
                                                 ? "text-zinc-950"
                                                 : "text-zinc-400"
@@ -348,7 +348,7 @@ export default function CreateRoutine({
                     </View>
                 </View>
 
-                <View className="mt-8 gap-5">
+                <View className="mt-8 gap-5 will-change-variable">
                     {blocks.map((block, index) => (
                         <View
                             key={block.id}
@@ -356,11 +356,11 @@ export default function CreateRoutine({
                         >
                             <View className="mb-5 flex-row items-center justify-between">
                                 <View>
-                                    <Text className="text-lg font-bold text-white">
+                                    <Text className="text-lg font-sans-bold text-white">
                                         Block {index + 1}
                                     </Text>
 
-                                    <Text className="mt-1 text-sm text-zinc-500">
+                                    <Text className="mt-1 text-sm font-sans text-zinc-500">
                                         {formatMinutes(
                                             block.startMinutes
                                         )}{" "}
@@ -376,14 +376,14 @@ export default function CreateRoutine({
                                         }
                                         className="rounded-full bg-red-500/10 px-3 py-2"
                                     >
-                                        <Text className="text-sm font-semibold text-red-400">
+                                        <Text className="text-sm font-sans-semibold text-red-400">
                                             Remove
                                         </Text>
                                     </Pressable>
                                 )}
                             </View>
 
-                            <Text className="mb-2 text-sm font-medium text-zinc-300">
+                            <Text className="mb-2 text-sm font-sans-medium text-zinc-300">
                                 Optional block label
                             </Text>
 
@@ -402,10 +402,10 @@ export default function CreateRoutine({
                                 }
                                 placeholder="Morning at home"
                                 placeholderTextColor="#71717A"
-                                className="mb-5 rounded-2xl border-zinc-800 bg-zinc-900 text-white"
+                                className="mb-5 rounded-2xl border-zinc-800 bg-zinc-900 text-base font-sans text-white"
                             />
 
-                            <Text className="mb-3 text-sm font-medium text-zinc-300">
+                            <Text className="mb-3 text-sm font-sans-medium text-zinc-300">
                                 Context
                             </Text>
 
@@ -435,7 +435,7 @@ export default function CreateRoutine({
                                             }`}
                                         >
                                             <Text
-                                                className={`font-semibold ${
+                                                className={`font-sans-semibold ${
                                                     selected
                                                         ? "text-zinc-950"
                                                         : "text-zinc-400"
@@ -486,7 +486,7 @@ export default function CreateRoutine({
                     onPress={addBlock}
                     className="mt-5 items-center rounded-2xl border border-dashed border-zinc-700 bg-zinc-900/40 py-5"
                 >
-                    <Text className="text-base font-bold text-white">
+                    <Text className="text-base font-sans-bold text-white">
                         + Add another block
                     </Text>
                 </Pressable>
@@ -495,7 +495,7 @@ export default function CreateRoutine({
                     onPress={handleSave}
                     className="mt-8 items-center rounded-2xl bg-white py-5"
                 >
-                    <Text className="text-base font-bold text-zinc-950">
+                    <Text className="text-base font-sans-bold text-zinc-950">
                         Save routine
                     </Text>
                 </Pressable>

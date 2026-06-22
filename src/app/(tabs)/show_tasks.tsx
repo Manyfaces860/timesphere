@@ -280,7 +280,7 @@ export default function TasksScreen() {
                             }`}
                         >
                             <Text
-                                className={`text-sm font-bold ${
+                                className={`text-sm font-sans-bold ${
                                     selected
                                         ? "text-zinc-950"
                                         : "text-zinc-500"
@@ -294,7 +294,7 @@ export default function TasksScreen() {
             </View>
 
             <View className="mt-6 flex-row items-center justify-between">
-                <Text className="text-sm font-semibold text-zinc-500">
+                <Text className="text-sm font-sans-semibold text-zinc-500">
                     {filteredTasks.length}{" "}
                     {filteredTasks.length === 1
                         ? "task"

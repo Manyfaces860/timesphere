@@ -91,7 +91,7 @@ export default function TimePicker({
 
     return (
         <View>
-            <Text className="mb-2 text-sm font-medium text-zinc-300">
+            <Text className="mb-2 text-sm font-sans-medium text-zinc-300">
                 {label}
             </Text>
 
@@ -99,7 +99,7 @@ export default function TimePicker({
                 onPress={openPicker}
                 className="rounded-2xl border border-zinc-800 bg-zinc-900 px-4 py-4"
             >
-                <Text className="text-base font-semibold text-white">
+                <Text className="text-base font-sans-semibold text-white">
                     {formatMinutes(value)}
                 </Text>
             </Pressable>
@@ -138,17 +138,17 @@ export default function TimePicker({
                         >
                             <View className="mb-4 flex-row items-center justify-between">
                                 <Pressable onPress={() => setIsOpen(false)}>
-                                    <Text className="text-base font-semibold text-zinc-400">
+                                    <Text className="text-base font-sans-semibold text-zinc-400">
                                         Cancel
                                     </Text>
                                 </Pressable>
 
-                                <Text className="text-lg font-bold text-white">
+                                <Text className="text-lg font-sans-bold text-white">
                                     Select time
                                 </Text>
 
                                 <Pressable onPress={handleIOSConfirm}>
-                                    <Text className="text-base font-bold text-blue-400">
+                                    <Text className="text-base font-sans-bold text-blue-400">
                                         Done
                                     </Text>
                                 </Pressable>

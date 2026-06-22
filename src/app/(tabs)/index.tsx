@@ -418,11 +418,11 @@ export default function HomeScreen() {
             <View className="mt-9">
                 <View className="flex-row items-end justify-between">
                     <View className="flex-1 pr-4">
-                        <Text className="text-2xl font-bold text-white">
+                        <Text className="text-2xl font-sans-bold text-white">
                             Suggested tasks
                         </Text>
 
-                        <Text className="mt-1 text-sm text-zinc-500">
+                        <Text className="mt-1 text-sm font-sans text-zinc-500">
                             {rightNowFeed.allMatchingTasks.length}{" "}
                             {rightNowFeed.allMatchingTasks.length === 1
                                 ? "task fits"
@@ -440,7 +440,7 @@ export default function HomeScreen() {
                                     router.push("/show_tasks")
                                 }
                             >
-                                <Text className="font-semibold text-zinc-300">
+                                <Text className="font-sans-semibold text-zinc-300">
                                     View all
                                 </Text>
                             </Pressable>
@@ -453,11 +453,11 @@ export default function HomeScreen() {
                             ✨
                         </Text>
 
-                        <Text className="mt-5 text-xl font-bold text-white">
+                        <Text className="mt-5 text-xl font-sans-bold text-white">
                             Nothing fits right now
                         </Text>
 
-                        <Text className="mt-2 text-center leading-6 text-zinc-400">
+                        <Text className="mt-2 text-center font-sans leading-6 text-zinc-400">
                             Change your current context or create a
                             task that can be done here.
                         </Text>
@@ -468,7 +468,7 @@ export default function HomeScreen() {
                             }
                             className="mt-6 rounded-2xl bg-white px-6 py-4"
                         >
-                            <Text className="font-bold text-zinc-950">
+                            <Text className="font-sans-bold text-zinc-950">
                                 Create task
                             </Text>
                         </Pressable>
@@ -487,7 +487,7 @@ export default function HomeScreen() {
                         {rightNowFeed.nextTasks.length >
                             0 && (
                                 <View className="mt-6">
-                                    <Text className="mb-3 text-lg font-bold text-white">
+                                    <Text className="mb-3 text-lg font-sans-bold text-white">
                                         Next up
                                     </Text>
 

@@ -50,13 +50,13 @@ export default function RightNowTaskCard({
             }`}
         >
             {featured && (
-                <Text className="mb-3 text-xs font-bold uppercase tracking-widest text-zinc-500">
+                <Text className="mb-3 text-xs font-sans-bold uppercase tracking-widest text-zinc-500">
                     Best task right now
                 </Text>
             )}
 
             <Text
-                className={`font-bold ${
+                className={`font-sans-bold ${
                     featured
                         ? "text-2xl text-zinc-950"
                         : "text-lg text-white"
@@ -67,7 +67,7 @@ export default function RightNowTaskCard({
 
             {task.notes && (
                 <Text
-                    className={`mt-2 leading-5 ${
+                    className={`mt-2 font-sans leading-5 ${
                         featured
                             ? "text-zinc-600"
                             : "text-zinc-400"
@@ -86,7 +86,7 @@ export default function RightNowTaskCard({
                     }`}
                 >
                     <Text
-                        className={`text-xs font-semibold ${
+                        className={`text-xs font-sans-semibold ${
                             featured
                                 ? "text-zinc-700"
                                 : "text-zinc-300"
@@ -104,7 +104,7 @@ export default function RightNowTaskCard({
                     }`}
                 >
                     <Text
-                        className={`text-xs font-semibold capitalize ${
+                        className={`text-xs font-sans-semibold capitalize ${
                             featured
                                 ? "text-zinc-700"
                                 : "text-zinc-300"
@@ -122,7 +122,7 @@ export default function RightNowTaskCard({
                     }`}
                 >
                     <Text
-                        className={`text-xs font-semibold capitalize ${
+                        className={`text-xs font-sans-semibold capitalize ${
                             featured
                                 ? "text-zinc-700"
                                 : "text-zinc-300"
@@ -142,7 +142,7 @@ export default function RightNowTaskCard({
                 }`}
             >
                 <Text
-                    className={`font-bold ${
+                    className={`font-sans-bold ${
                         featured
                             ? "text-white"
                             : "text-zinc-950"
